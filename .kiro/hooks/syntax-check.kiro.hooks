@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Verify Commodity Artwork Filenames",
+  "description": "Checks newly added artwork in assets/ against the 13 tracked commodity names in design-system.md",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "my_apps/market-to-table/main/assets/*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Check the newly added file in my_apps/market-to-table/main/assets/ against the 13 required commodity filenames listed in .kiro/steering/design-system.md (wheat, rice, corn, oats, beef, pork, soy, dairy, coffee, orange_juice, cooking_oil, sugar, cocoa). Confirm if it matches or warn me if there is a typo in the filename."
+  }
+}

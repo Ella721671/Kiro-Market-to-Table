@@ -1,0 +1,9 @@
+# Dependencies for the meal planner
+
+datetime
+os
+dotenv
+requests
+yfinance
+decimal
+streamlit

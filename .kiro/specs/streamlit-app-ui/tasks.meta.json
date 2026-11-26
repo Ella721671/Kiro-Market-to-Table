@@ -1,0 +1,391 @@
+{
+  "pbtResults": {
+    "3.4 Write property test for cupboard exclusion": {
+      "status": "passed",
+      "lastRunTimestamp": 1795553221936
+    },
+    "3.3 Write property test for checkout precision": {
+      "status": "passed",
+      "lastRunTimestamp": 1795553253057
+    },
+    "2.2 Write property test for `get_base64_image` round-trip integrity": {
+      "status": "passed",
+      "lastRunTimestamp": 1795553257045
+    },
+    "2.4 Write property test for CSS token consistency": {
+      "status": "passed",
+      "lastRunTimestamp": 1795553603680
+    },
+    "3.5 Write property test for zero-quantity exclusion": {
+      "status": "passed",
+      "lastRunTimestamp": 1795553741407
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold file structure and constants": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551532931
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551539742
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551870712
+      }
+    ],
+    "2.1 Implement `get_base64_image(commodity_name: str) -> str | None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533114
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551872914
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552456824
+      }
+    ],
+    "2.2 Write property test for `get_base64_image` round-trip integrity": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533250
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552467816
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553619789
+      }
+    ],
+    "2.3 Implement `inject_theme_css(primary: str, deep: str, is_burnout: bool) -> None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533382
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551875148
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552459300
+      }
+    ],
+    "2.4 Write property test for CSS token consistency": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533478
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552469974
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553622340
+      }
+    ],
+    "2.5 Write unit tests for `inject_theme_css`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533579
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552472098
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553624974
+      }
+    ],
+    "3.1 Implement `cached_pipeline(calendar_name: str) -> dict`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533673
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551877541
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552462172
+      }
+    ],
+    "3.2 Implement `compute_checkout(basket, session_state, mode) -> tuple[Decimal, int, int]`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533766
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551879773
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552464707
+      }
+    ],
+    "3.3 Write property test for checkout precision": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533860
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552474426
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553627424
+      }
+    ],
+    "3.4 Write property test for cupboard exclusion": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551533963
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795552477020
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553629988
+      }
+    ],
+    "3.5 Write property test for zero-quantity exclusion": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534056
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553632601
+      }
+    ],
+    "3.6 Write unit tests for `compute_checkout`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534147
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553634872
+      }
+    ],
+    "4.1 Implement `build_shopping_list_txt(basket, session_state, mode) -> str`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534256
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553637429
+      }
+    ],
+    "4.2 Implement quantity stepper bounds logic": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534405
+      },
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553639790
+      }
+    ],
+    "4.3 Write property test for shopping list cupboard exclusion": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534493
+      }
+    ],
+    "4.4 Write property test for shopping list format invariant": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534592
+      }
+    ],
+    "4.5 Write property test for quantity stepper bounds": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534696
+      }
+    ],
+    "4.6 Write unit tests for `build_shopping_list_txt`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534811
+      }
+    ],
+    "5. Checkpoint — Verify pure-logic helpers pass all tests": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551534909
+      }
+    ],
+    "6.1 Implement `render_header(data: dict) -> str`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535007
+      }
+    ],
+    "6.2 Implement `render_commodity_grid(commodity_analysis: list[dict]) -> None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535121
+      }
+    ],
+    "7.1 Implement `render_budget_bar(checkout_total: Decimal, budget: int) -> None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535244
+      }
+    ],
+    "7.2 Implement `render_basket_cards(basket: list[dict], mode: str) -> None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535358
+      }
+    ],
+    "8.1 Implement `render_meal_cards(active_ingredients: list[str], mode: str) -> None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535457
+      }
+    ],
+    "8.2 Write property test for meal cards mode filter": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535574
+      }
+    ],
+    "8.3 Write property test for meal ingredient overlap": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535667
+      }
+    ],
+    "9.1 Implement `compute_impact(basket, session_state, mode) -> dict` helper": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535761
+      }
+    ],
+    "9.2 Implement `render_summary_bar(checkout_total, prep_mins, item_count, impact) -> None`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535855
+      }
+    ],
+    "9.3 Implement `format_gbp(value: Decimal) -> str` helper": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551535945
+      }
+    ],
+    "9.4 Write property test for GBP format invariant": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551536030
+      }
+    ],
+    "9.5 Write unit test for meal library schema": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551536114
+      }
+    ],
+    "10.1 Implement `main() -> None` as the Streamlit entry point": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551536215
+      }
+    ],
+    "10.2 Write AppTest unit test for header stress pill": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551536317
+      }
+    ],
+    "11. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795551536490
+      }
+    ],
+    "2. Implement `get_base64_image` and `inject_theme_css`": [
+      {
+        "executionId": "77a73309-2201-441e-83cb-7c0ce40e4fe8",
+        "chatSessionId": "sess_9da139c3-47a2-4cae-91d0-31be58ea92fa",
+        "timestamp": 1795553625116
+      }
+    ]
+  }
+}
