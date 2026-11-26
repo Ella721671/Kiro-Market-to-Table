@@ -18,9 +18,292 @@ from pathlib import Path
 from typing import Any
 import streamlit as st
 
-# Ensure Main/assets/ exists on import so get_base64_image never crashes on first run.
-(Path(__file__).resolve().parent / "assets").mkdir(parents=True, exist_ok=True)
+def apply_cottagecore_theme(is_stressed: bool = False) -> None:
+    """Applies the complete Market-to-Table cottagecore UI styling."""
+    if is_stressed:
+        awning_stripe = "#D97724"   # Warm market-stall orange for stressed week
+        awning_trim = "#D99B21"     # Warm Ochre trim
+        badge_bg = "rgba(217, 155, 33, 0.18)"
+    else:
+        awning_stripe = "#838921"   # Sage Olive green for relaxing week
+        awning_trim = "#6B701A"     # Deep herb-leaf trim
+        badge_bg = "rgba(131, 137, 33, 0.16)"
 
+    st.markdown(
+        f"""
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,500&family=Nunito:wght@400;600;700&display=swap');
+
+        /* Make Streamlit's top bar transparent so the stall awning shows at the very top */
+        [data-testid="stHeader"] {{
+            background: transparent !important;
+        }}
+
+        /* Warm Sand parchment background with subtle handmade-paper grain */
+        .stApp,
+        [data-testid="stAppViewContainer"] {{
+            background-color: #EEDFC7 !important;
+            background-image: radial-gradient(rgba(59, 47, 47, 0.045) 1px, transparent 0) !important;
+            background-size: 18px 18px !important;
+            color: #3B2F2F;
+            font-family: 'Nunito', sans-serif;
+        }}
+
+        /* Attach the striped awning to stMain so it stays at the top and scrolls with the banner */
+        [data-testid="stMain"],
+        .main {{
+            position: relative;
+        }}
+
+        [data-testid="stMain"]::before,
+        .main::before {{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 168px;
+            box-sizing: border-box;
+            background-image:
+                linear-gradient(
+                    180deg,
+                    rgba(59, 47, 47, 0.08) 0%,
+                    transparent 22%,
+                    transparent 82%,
+                    rgba(59, 47, 47, 0.10) 100%
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    {awning_stripe} 0px,
+                    {awning_stripe} 28px,
+                    #FAF5EB 28px,
+                    #FAF5EB 56px
+                );
+            z-index: 0;
+            pointer-events: none;
+        }}
+
+        /* Scalloped fabric valance edge hanging below the striped awning */
+        [data-testid="stMain"]::after,
+        .main::after {{
+            content: "";
+            position: absolute;
+            top: 168px;
+            left: 0;
+            width: 100%;
+            height: 16px;
+            background-image:
+                radial-gradient(circle at 14px 0, {awning_stripe} 12px, {awning_trim} 12px, {awning_trim} 14px, transparent 14.5px),
+                radial-gradient(circle at 42px 0, #FAF5EB 12px, {awning_trim} 12px, {awning_trim} 14px, transparent 14.5px);
+            background-size: 56px 16px;
+            background-repeat: repeat-x;
+            filter: drop-shadow(0 4px 6px rgba(59, 47, 47, 0.12));
+            z-index: 0;
+            pointer-events: none;
+        }}
+
+        /* Keep your banner, text, and cards layered cleanly IN FRONT of the awning */
+        [data-testid="stMainBlockContainer"],
+        .main .block-container {{
+            position: relative;
+            z-index: 1;
+        }}
+
+        /* Cookbook-style serif headings */
+        h1, h2, h3, h4, .mtt-section-title {{
+            font-family: 'Lora', Georgia, serif !important;
+            letter-spacing: -0.01em;
+        }}
+
+        /* Keep dark header and bottom summary bar text crisp white */
+        .mtt-header, .mtt-header div, .mtt-header span:not(.mtt-badge),
+        .mtt-summary-bar, .mtt-summary-bar span,
+        .mtt-impact-pill {{
+            color: #FFFFFF !important;
+        }}
+
+        /* Pressed-linen card styling */
+        .mtt-card, .mtt-savings-banner {{
+            background-color: #FAF5EB !important;
+            border: 1px solid #C8B69E !important;
+            box-shadow: 0 4px 12px rgba(59, 47, 47, 0.06) !important;
+        }}
+
+        /* Vintage recipe box index-card border for meal suggestions */
+        .mtt-recipe-card {{
+            border-radius: 14px !important;
+            padding: 1.45rem 1.65rem !important;
+            outline: 1.5px dashed #C8B69E !important;
+            outline-offset: -8px !important;
+        }}
+
+        .mtt-recipe-card-title {{
+            font-family: 'Lora', Georgia, serif !important;
+            border-bottom: 1.5px solid rgba(217, 155, 33, 0.45);
+            padding-bottom: 6px;
+        }}
+
+        /* Tactile rounded buttons matching the active week's stall color */
+        div[data-testid="stButton"] > button {{
+            border-radius: 999px !important;
+            border: 1px solid {awning_trim} !important;
+            transition: transform 0.15s ease, filter 0.15s ease;
+        }}
+
+        div[data-testid="stButton"] > button:hover {{
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }}
+
+        /* Replace Streamlit's coral-red sliders & checkboxes with active stall colors */
+        input[type="checkbox"],
+        [data-testid="stCheckbox"] {{
+            accent-color: {awning_stripe} !important;
+        }}
+
+        [data-testid="stCheckbox"] label span[role="checkbox"][aria-checked="true"],
+        [data-baseweb="checkbox"] input:checked + div {{
+            background-color: {awning_stripe} !important;
+            border-color: {awning_trim} !important;
+        }}
+
+        [data-baseweb="slider"] [role="slider"] {{
+            background-color: {awning_stripe} !important;
+            border: 2px solid #FAF5EB !important;
+            box-shadow: 0 2px 6px rgba(59, 47, 47, 0.25) !important;
+        }}
+
+        [data-baseweb="slider"] div[data-testid="stThumbValue"] {{
+            color: #3B2F2F !important;
+            font-family: 'Lora', Georgia, serif !important;
+            font-weight: 700 !important;
+        }}
+
+        [data-baseweb="slider"] > div > div > div:nth-child(2) {{
+            background-color: {awning_stripe} !important;
+        }}
+
+        /* Style tabs like protruding manila recipe-box index dividers */
+        .stTabs [data-baseweb="tab-list"] {{
+            background-color: transparent !important;
+            border-bottom: 2px solid #C8B69E !important;
+            border-radius: 0 !important;
+            gap: 8px !important;
+            padding: 0 4px !important;
+        }}
+
+        .stTabs [data-baseweb="tab"] {{
+            background-color: #E6D3B5 !important;
+            color: #3B2F2F !important;
+            border: 1px solid #C8B69E !important;
+            border-bottom: none !important;
+            border-radius: 12px 12px 0 0 !important;
+            padding: 0.5rem 1.25rem !important;
+            font-family: 'Lora', Georgia, serif !important;
+            font-weight: 600 !important;
+        }}
+
+        .stTabs [aria-selected="true"] {{
+            background-color: #FAF5EB !important;
+            color: #3B2F2F !important;
+            border-top: 3px solid {awning_stripe} !important;
+            font-weight: 700 !important;
+        }}
+
+        .stTabs [data-baseweb="tab-highlight"] {{
+            background-color: transparent !important;
+        }}
+
+        /* Hand-stamped market crate badges */
+        .mtt-badge {{
+            border-radius: 6px !important;
+            letter-spacing: 0.04em !important;
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            color: #FAF5EB !important;
+            border: 1.5px solid rgba(59, 47, 47, 0.28) !important;
+            outline: 1px dashed rgba(250, 245, 235, 0.65) !important;
+            outline-offset: -3px !important;
+            box-shadow: 0 2px 4px rgba(59, 47, 47, 0.12) !important;
+            transform: rotate(-2deg);
+        }}
+
+        .mtt-badge-bargain {{
+            background-color: #5A6E28 !important; /* Muted herb-leaf green ink */
+        }}
+
+        .mtt-badge-surge {{
+            background-color: #B84A39 !important; /* Muted terracotta clay ink */
+        }}
+
+        .mtt-badge-stable {{
+            background-color: #7A6A58 !important; /* Warm sepia ink */
+        }}
+
+        /* Botanical plate & apothecary framing on ingredient illustrations */
+        .mtt-strip-frame,
+        .mtt-strip-mono,
+        .mtt-art-frame,
+        .mtt-monogram,
+        .mtt-hero-frame,
+        .mtt-hero-monogram {{
+            border: 2px solid {awning_trim} !important;
+            outline: 1px solid rgba(59, 47, 47, 0.28) !important;
+            outline-offset: -5px !important;
+            box-shadow:
+                inset 0 2px 6px rgba(59, 47, 47, 0.16),
+                0 3px 8px rgba(59, 47, 47, 0.08) !important;
+        }}
+
+        /* Botanical section divider */
+        .botanical-divider {{
+            text-align: center;
+            color: #6B5B4B;
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.25em;
+            margin: 1.2rem 0;
+            opacity: 0.85;
+        }}
+
+        /* Inked pantry stamp pill */
+        .pantry-stamp {{
+            display: inline-block;
+            background-color: {badge_bg};
+            border: 1.5px dashed {awning_trim};
+            color: #3B2F2F !important;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def botanical_divider(icon: str = "🌿") -> None:
+    """Renders a cozy cottagecore divider between sections."""
+    st.markdown(
+        f'<div class="botanical-divider">── {icon} ──</div>',
+        unsafe_allow_html=True,
+    )
+
+
+
+def botanical_divider(icon: str = "🌿") -> None:
+    """Renders a cozy cottagecore divider between sections."""
+    st.markdown(
+        f'<div class="botanical-divider">── {icon} ──</div>',
+        unsafe_allow_html=True,
+    )
+def botanical_divider(icon: str = "🌿") -> None:
+    """Renders a cozy cottagecore divider between sections."""
+    st.markdown(
+        f'<div class="botanical-divider">── {icon} ──</div>',
+        unsafe_allow_html=True,
+    )
 
 # ---------------------------------------------------------------------------
 # --- Section 1: Constants ---
@@ -1087,6 +1370,8 @@ def render_banner_and_controls(
     deep = COLOUR_TOKENS["deep_roasted"] if is_burnout else COLOUR_TOKENS["deep_forest"]
 
     inject_theme_css(primary=primary, deep=deep)
+    apply_cottagecore_theme(is_stressed=is_burnout)
+
 
     badge_text = stress_status if stress_status else "Status unavailable"
     st.markdown(
@@ -1524,8 +1809,8 @@ def render_meal_cards(
             )
 
         st.markdown(
-            f'<div class="mtt-card" style="margin-bottom:1.1rem;">'
-            f'<p style="margin:0 0 4px 0;font-size:1.05rem;font-weight:700;color:{deep};">{meal["title"]}</p>'
+            f'<div class="mtt-card mtt-recipe-card" style="margin-bottom:1.1rem;">'
+            f'<p class="mtt-recipe-card-title" style="margin:0 0 6px 0;font-size:1.1rem;font-weight:700;color:{deep};">{meal["title"]}</p>'
             f'<p style="margin:0 0 10px 0;font-size:0.8rem;color:{COLOUR_TOKENS["warm_slate"]};">'
             f'{meal["prep_total_mins"]} min total &nbsp;|&nbsp; {meal["cook_time_mins"]} min cook</p>'
             f'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">{thumbs_html}</div>'
