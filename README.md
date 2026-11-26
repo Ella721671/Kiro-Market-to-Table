@@ -26,6 +26,37 @@ When your schedule is overloaded, the interface shifts into **Warm Ochre & Marke
 
 ---
 
+## How It Works
+
+```mermaid
+flowchart LR
+    A[Calendar.py<br/>Stress & Density Check] -->|Calm or Burnout Mode| C[Shopping-planner.py<br/>Swap & Budget Engine]
+    B[Commodity-analyser.py<br/>13 Futures Tickers] -->|Surge / Bargain Signals| C
+    C -->|Smart Basket & Recipes| D[Main/app.py<br/>Cottagecore Streamlit UI]
+    A -.->|Offline Fallback| C
+    B -.->|Deterministic Fallback| C
+```
+
+## Project Structure
+
+```text
+Market-to-Table/
+├── .kiro/
+│   ├── hooks/              # Automated validation & asset check hooks
+│   ├── specs/              # Requirements, design & task specs
+│   └── steering/           # Architecture & cottagecore theme guidelines
+├── Main/
+│   ├── assets/             # Custom ingredient illustrations
+│   ├── app.py              # Streamlit UI & custom cottagecore CSS
+│   ├── Calendar.py         # Schedule density & burnout scorer
+│   ├── Commodity-analyser.py # 30-day futures trend analyzer
+│   ├── Shopping-planner.py # Supermarket swap & savings engine
+│   └── main.py             # End-to-end pipeline orchestrator
+├── tests/                  # Pytest & Hypothesis property-based tests
+├── requirements.txt
+└── README.md
+```
+
 ## Get Started with Market-to-Table
 
 ### 1. Clone and Open in Kiro IDE
