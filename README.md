@@ -60,6 +60,12 @@ streamlit run Main/app.py
 ```
 Use the **Schedule Mode** dropdown at the top of the page to switch between **Demo - Calm Week**, **Demo - Burnout Week**, and **Live Google Calendar**.
 
+### 3. Run the Verification and Property test suite
+Market-to-Table uses `pytest` and `hypothesis` property-based testing to verify checkout math, budget auto-fitting, Base64 asset loading, and theme tokens:
+```bash
+pytest
+```
+
 ### Utilising Kiro
 This project was made within the **Kiro IDE** using a spec driven development and utilisng **Specs**, **Steering Docs**, **Hooks**, and **Property-Based Testing**—to coordinate a multi-API backend with a Streamlit frontend.
 
@@ -86,3 +92,22 @@ Guided by Kiro’s spec task lists, the test suite pairs unit tests with **`hypo
 * **Checkout & Savings Math:** Proves that basket totals, cupboard exclusions (`£0.00`), and standard shop savings remain accurate across item quantities and prices.
 * **1 Click Budget Optimiser:** Verifies that `_auto_fit_to_budget` prioritises trimming `Surge` items first while preserving `Bargain` staples until the basket fits under the user's own personal `£10–£60` slider limit.
 * **Theme & Asset Safety:** Confirms required colour tokens remain intact and missing asset files degrade cleanly to two-letter monograms.
+
+## Commodities tracked 
+Market-to-Table monitors 13 agricultural futures tickers to flag supermarket price surges and bargains:
+
+| Commodity | Futures Ticker | Role in Smart Basket |
+| :--- | :--- | :--- |
+| **Wheat** | `ZW=F` | Pasta, flatbreads, pitta pockets, toast, whole bread |
+| **Rice** | `ZR=F` | Basmati rice and 2-minute steamed pouches |
+| **Corn** | `ZC=F` | Tortillas, polenta and sweetcorn sides |
+| **Oats** | `ZO=F` | Porridge, overnight oats and flapjack bites |
+| **Beef** | `LE=F` | Slow-simmered bolognese and cottage pie |
+| **Pork** | `HE=F` | Medallions and ready made pulled pork |
+| **Soy** | `ZS=F` | Tofu stir-fries and soy seasoning sachets |
+| **Dairy** | `DC=F` | Milk, grated cheddar and three-cheese pasta bakes |
+| **Coffee** | `KC=F` | Filter beans and instant granules |
+| **Orange Juice** | `OJ=F` | Chilled breakfast juice and other juices |
+| **Cooking Oil** | `ZL=F` | Pan searing and roasting staples |
+| **Sugar** | `SB=F` | Baking ingredients and sweet breakfast toppings |
+| **Cocoa** | `CC=F` | Dark chocolate and hot cocoa |
