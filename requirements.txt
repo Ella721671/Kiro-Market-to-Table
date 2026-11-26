@@ -2,8 +2,9 @@
 
 datetime
 os
-dotenv
+python-dotenv
 requests
 yfinance
 decimal
 streamlit
+hypothesis
