@@ -3,7 +3,7 @@
 
 Market to Table removes the guesswork from weekly meal planning by connecting three different data streams into one application. The application combines a commodity anaylser (`Commodity-analyser.py`), your calendar app filled with your day to day schedule (`Calendar.py`), and a shopping cart and meal planner (`Shopping-planner.py`) into one Streamlit app (`Main/app.py`)
 
-Dreading a week packed with back-to-back meetings and zero energy to cook? Market to Table detects the **time limitability and automatically pivots your basket** to 5-minute and pre-made pantry items. Have a calm weekend ahead while wheat or coffee futures are surging? It swaps **expensive staples for bargain alternatives** and ingredients that you can make meals from scratch with.
+Dreading a week packed with back-to-back meetings and zero energy to cook? Market to Table detects the **time limitability and automatically pivots your basket** to 5-minute and pre-made store cupboard items. Have a calm weekend ahead while wheat or coffee futures are surging? It swaps **expensive staples for bargain alternatives** and ingredients that you can make meals from scratch with.
 
 
 
@@ -102,7 +102,7 @@ This project was made within the **Kiro IDE** using a spec driven development an
 
 #### 📋 Spec-Driven Architecture (`.kiro/specs/`)
 Rather than building from a single spec prompt, the application was decomposed into **four modular Kiro specs**, each containing traceable `requirements.md`, `design.md`, and `tasks.md` files:
-1. **Calendar Burnout Detection (`Calendar.py`):** Reads your calendar and defines what constitutes as a **Calm** (`from_scratch` cooking) or **Burnout** (`minimal_prep` pantry rescues) week using the number of hours events take up the calendar and key words such as urgent or deadline.
+1. **Calendar Burnout Detection (`Calendar.py`):** Reads your calendar and defines what constitutes as a **Calm** (`from_scratch` cooking) or **Burnout** (`minimal_prep` store cupboard rescues) week using the number of hours events take up the calendar and key words such as urgent or deadline.
 2. **Commodity Analyser (`Commodity-analyser.py`):** Maps 13 everyday food items to Yahoo Finance agricultural futures tickers (`ZW=F`, `KC=F`, `LE=F`, etc.) and categorises 30-day price shifts into **Surge**, **Bargain**, or **Stable** signals.
 3. **Smart Basket & Meal Planner (`Shopping-planner.py`):** Translates market signals and combines this with data from the calendar application to decide and execute supermarket swaps, calculating exact GBP savings (`Decimal` precision) and prep-time minutes saved against a standard unswapped shop, as well as specific brands to buy.
 4. **Cottagecore Editorial UI (`Main/app.py`):** Connects all three backend modules into an interactive Streamlit interface featuring a dynamic market-stall styl application, a 13 commodity status strip, 50/50 split price history view, and automatic budgeting.
