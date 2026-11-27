@@ -9,15 +9,21 @@ Dreading a week packed with back-to-back meetings and zero energy to cook? Marke
 
 ## Core Experience 
 
+![Market-to-Table Calm Week](xmedia/calm-week.png)
+
 ### 1. Calm Week functionality
 When your calendar shows few activities in your itinerary, Market to Table shifts into **Sage Olive** market-stall styling and colouring and builds a `from_scratch` basket:
 - Suggests rewarding, budget-friendly recipes like *Beef Mince Bolognese with Fusilli*, *Tofu Stir-Fry with Rice*, and *Orange Juice Overnight Oats*.
 - Prioritises whole ingredients and bargain commodity staples to stretch your weekly budget further.
 
+![Market-to-Table Calm Week](xmedia/burnout-week.png)
+
 ### 2. Burnout Week functionality
 When your schedule is overloaded, the interface shifts into **Warm Ochre & Market Orange** styling and colouring and will switch to `minimal_prep` mode:
 - Automatically swaps raw, high-prep ingredients for 3–5 minute assemblies like *Steamed Rice Pouch with Cooked Chicken*, *Pulled Pork Pitta Pockets*, and *Microwave Pasta with Grated Cheese*.
 - Tracks both **money saved** and **prep minutes saved** compared to a standard unswapped supermarket shop.
+
+![Market-to-Table Calm Week](xmedia/split-view.png)
 
 ### 3. Live Commodity Signals & Smart Basket 📈
 - **13-Commodity Market Strip:** Inspect real-time **Surge**, **Bargain**, and **Stable** signals across 13 global agricultural futures (`yfinance` with deterministic fallback).
