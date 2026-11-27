@@ -1,10 +1,11 @@
 # Dependencies for the meal planner
 
-datetime
-os
-python-dotenv
-requests
-yfinance
-decimal
 streamlit
+altair
+yfinance
+pandas
+requests
+python-dotenv
+google-api-python-client
+pytest
 hypothesis
